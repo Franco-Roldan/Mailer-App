@@ -34,7 +34,6 @@ def init_db():
     db.commit()
 
 # función para inicializar la db desde la línea de comandos
-
 @click.command('init-db')
 @with_appcontext
 def init_db_command():

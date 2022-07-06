@@ -23,6 +23,7 @@ def index():
 
     return render_template("mails/index.html", mails=mails)
 
+
 #ruta para crear y enviar correos
 @bp.route("/create", methods=["GET", "POST"])
 def create():
