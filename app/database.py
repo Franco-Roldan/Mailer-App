@@ -12,7 +12,8 @@ def get_db():
             host= current_app.config['DATABASE_HOST'],
             user= current_app.config['DATABASE_USER'],
             password= current_app.config['DATABASE_PASSWORD'],
-            database= current_app.config['DATABASE']
+            database= current_app.config['DATABASE'],
+            port= current_app.config['DATABASE_PORT']
         )
         g.c = g.db.cursor(dictionary=True)
     return g.db, g.c
@@ -36,6 +37,7 @@ def init_db():
 # función para inicializar la db desde la línea de comandos
 @click.command('init-db')
 @with_appcontext
+
 def init_db_command():
     init_db()
     click.echo("Base de datos inicializada con exito")
